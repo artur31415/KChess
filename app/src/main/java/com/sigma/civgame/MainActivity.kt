@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        var aUnity = Unity("Archer")
+        var aPiece = Piece("Rook", Piece.TYPE_ROOK, Piece.COLOR_BLACK)
 
         if (binding.SVGAME.holder.surface.isValid)
         {
