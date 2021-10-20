@@ -17,7 +17,18 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_main)
 
-        var aPiece = Piece("Rook", Piece.TYPE_ROOK, Piece.COLOR_BLACK)
+        //var aPiece = Piece("Rook", Piece.TYPE_ROOK, Piece.COLOR_BLACK)
+        var aBoard = Board()
+
+        var selectedPiece = aBoard.GetPieceByPos(PointF(1f, 1f))
+        
+        if(!selectedPiece.IsEmpty())
+        {
+            var freePositions = aBoard.GetFreePositions(selectedPiece.MovementPattern)
+            //then draw the positions!
+        }
+
+        aBoard.Draw()
 
         if (binding.SVGAME.holder.surface.isValid)
         {

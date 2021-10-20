@@ -1,12 +1,17 @@
 package com.sigma.civgame
 
 class Piece () {
-    var Name = String by Delegates.notNull()
-    var Key = String by Delegates.notNull()
+    var Name = String()
+    var Key = String()
     
-    var Pos = Array (8) { Array(8) {0}}
-    var Type = Int by Delegates.notNull()
-    Var Color = Int by Delegates.notNull()
+    var Pos = PointF(0f, 0f)
+    var Type = -1
+    var Color = -1
+
+    var IsAlive = false
+    var IsSelected = false
+
+    var MovementPattern = ArrayList<PointF> ()
 
     constructor(name: String, type: Int, color: Int) 
     {
@@ -14,6 +19,21 @@ class Piece () {
         Key = " " //This should be a random string
         Type = type
         Color = color
+
+        IsAlive = true
+    }
+
+    fun Draw()
+    {
+        //TODO: DRAW THE PIECE HERE!
+    }
+
+    fun IsEmpty()
+    {
+        if(Name == "Empty")
+            return true
+        else
+            return false
     }
 
 
@@ -23,6 +43,12 @@ class Piece () {
 
 
         const val COLOR_WHITE = 0
-        const val COLOR_BLACK = 1
+        const val COLOR_BLACK = 
+
+
+        fun GetEmptyPiece()
+        {
+            return Piece("EMPTY", -1, -1)
+        }
     }
 }
